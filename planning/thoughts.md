@@ -46,6 +46,6 @@
 
 What I chose
 
-- RP2040
+- RP2040 - KB2040
 - Cherry MX Black
 - EC11 Rotary Encoder
