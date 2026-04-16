@@ -160,7 +160,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:RotaryEncoder_Switch"
+		(symbol "Device:RotaryEncoder_Switch_MP"
 			(pin_names
 				(offset 0.254)
 				(hide yes)
@@ -171,7 +171,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "SW"
-				(at 0 6.604 0)
+				(at 0 8.89 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -180,8 +180,8 @@
 					)
 				)
 			)
-			(property "Value" "RotaryEncoder_Switch"
-				(at 0 -6.604 0)
+			(property "Value" "RotaryEncoder_Switch_MP"
+				(at 0 6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -202,7 +202,7 @@
 				)
 			)
 			(property "Datasheet" ""
-				(at 0 6.604 0)
+				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -212,8 +212,8 @@
 					)
 				)
 			)
-			(property "Description" "Rotary encoder, dual channel, incremental quadrate outputs, with switch"
-				(at 0 0 0)
+			(property "Description" "Rotary encoder, dual channel, incremental quadrate outputs, with switch and MP Pin"
+				(at 0 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -245,7 +245,7 @@
 					)
 				)
 			)
-			(symbol "RotaryEncoder_Switch_0_1"
+			(symbol "RotaryEncoder_Switch_MP_0_1"
 				(rectangle
 					(start -5.08 5.08)
 					(end 5.08 -5.08)
@@ -470,7 +470,7 @@
 					)
 				)
 			)
-			(symbol "RotaryEncoder_Switch_1_1"
+			(symbol "RotaryEncoder_Switch_MP_1_1"
 				(pin passive line
 					(at -7.62 2.54 0)
 					(length 2.54)
@@ -526,6 +526,24 @@
 					)
 				)
 				(pin passive line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
 					(at 7.62 2.54 180)
 					(length 2.54)
 					(name "S1"
@@ -554,6 +572,209 @@
 						)
 					)
 					(number "S2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OLED:TZT_5.5_OLED_SSD1322"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "DS?"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "None"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TZT_5.5_OLED_SSD1322_0_1"
+				(rectangle
+					(start -8.89 19.05)
+					(end 8.89 -19.05)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TZT_5.5_OLED_SSD1322_1_1"
+				(pin power_in line
+					(at 0 -21.59 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 21.59 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 12.7 0)
+					(length 2.54)
+					(name "SCL(Clock)"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 6.35 0)
+					(length 2.54)
+					(name "SDA(Data)"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 0 0)
+					(length 2.54)
+					(name "RST(Reset)"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -6.35 0)
+					(length 2.54)
+					(name "DC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -12.7 0)
+					(length 2.54)
+					(name "CS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1666,6 +1887,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(junction
 		(at 43.18 63.5)
@@ -1686,6 +2022,12 @@
 		(uuid "4bba0ae8-3c17-4135-91be-964ebcf1f47b")
 	)
 	(junction
+		(at 133.35 64.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "54a75cc7-2e4c-434c-b6f0-a1a69366080f")
+	)
+	(junction
 		(at 123.19 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1696,6 +2038,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "862376bf-b041-46b2-87e1-6078744f1b18")
+	)
+	(junction
+		(at 90.17 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ac89cdd2-fed2-4a27-b00c-d4fa3da9b175")
 	)
 	(junction
 		(at 101.6 110.49)
@@ -1726,6 +2074,50 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f0a79467-0027-415f-b1e1-b41a9770a8a7")
+	)
+	(no_connect
+		(at 96.52 62.23)
+		(uuid "06e1fbda-f64f-4d83-a896-1bf9c73fe57f")
+	)
+	(no_connect
+		(at 96.52 54.61)
+		(uuid "2a759d50-b99e-4171-b4bd-8dcd1aec9acd")
+	)
+	(no_connect
+		(at 195.58 63.5)
+		(uuid "476e6103-f9d1-49b0-b00e-0af803421c88")
+	)
+	(no_connect
+		(at 127 82.55)
+		(uuid "6674620b-f343-426e-aa39-1f6b4c0cafc5")
+	)
+	(no_connect
+		(at 96.52 57.15)
+		(uuid "8836c472-1a46-46e7-aa17-373d2397ba60")
+	)
+	(no_connect
+		(at 127 80.01)
+		(uuid "9731efa9-aad7-4c2a-9317-6cc15e372ab5")
+	)
+	(no_connect
+		(at 127 62.23)
+		(uuid "cd93ebe0-619a-409d-afce-2b3886328878")
+	)
+	(no_connect
+		(at 127 59.69)
+		(uuid "cde7f9aa-9bab-4866-911a-633d4b92213b")
+	)
+	(no_connect
+		(at 96.52 59.69)
+		(uuid "e2eb317f-1e2b-4acf-a4cb-a93243e7a30c")
+	)
+	(no_connect
+		(at 127 54.61)
+		(uuid "e69c66a8-1332-401b-bb9d-7cef7a81e0e2")
+	)
+	(no_connect
+		(at 127 57.15)
+		(uuid "f2403e3c-64b6-4655-a1e7-948bea921660")
 	)
 	(wire
 		(pts
@@ -1786,6 +2178,16 @@
 			(type default)
 		)
 		(uuid "193a6891-44b2-438f-88b9-24f5f233c3ec")
+	)
+	(wire
+		(pts
+			(xy 127 74.93) (xy 128.27 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19f070cc-de89-40bb-bb3a-490611232bad")
 	)
 	(wire
 		(pts
@@ -1899,6 +2301,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 77.47) (xy 128.27 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f15e6b5-cd85-4203-8d5a-37519c866b09")
+	)
+	(wire
+		(pts
 			(xy 43.18 101.6) (xy 43.18 114.3)
 		)
 		(stroke
@@ -1929,16 +2341,6 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 67.31) (xy 127 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7f7d1d95-a1fe-4228-afcf-f2aa22f0f6d7")
-	)
-	(wire
-		(pts
 			(xy 43.18 63.5) (xy 43.18 76.2)
 		)
 		(stroke
@@ -1946,6 +2348,16 @@
 			(type default)
 		)
 		(uuid "821397dd-98d0-41c7-a238-71c0880deb69")
+	)
+	(wire
+		(pts
+			(xy 90.17 64.77) (xy 90.17 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83078439-9152-460c-a814-d8c05fd7c1a7")
 	)
 	(wire
 		(pts
@@ -2019,6 +2431,26 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 69.85) (xy 127 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5db8c41-8a8e-485e-a668-fad9d72c0d71")
+	)
+	(wire
+		(pts
+			(xy 127 64.77) (xy 133.35 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b78b4bd6-aad8-47d4-a7ef-d36faef7b333")
+	)
+	(wire
+		(pts
 			(xy 83.82 120.65) (xy 85.09 120.65)
 		)
 		(stroke
@@ -2059,6 +2491,36 @@
 	)
 	(wire
 		(pts
+			(xy 88.9 62.23) (xy 90.17 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d44bf6de-afbf-4fc0-aeb5-47bf9dd1fbd9")
+	)
+	(wire
+		(pts
+			(xy 96.52 64.77) (xy 90.17 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dba407fc-2ea8-43e4-9c58-768e83f8ad4f")
+	)
+	(wire
+		(pts
+			(xy 127 67.31) (xy 142.24 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddcbfb32-10f3-4cb9-85e6-a8d2f892f85f")
+	)
+	(wire
+		(pts
 			(xy 83.82 110.49) (xy 83.82 115.57)
 		)
 		(stroke
@@ -2086,6 +2548,26 @@
 			(type default)
 		)
 		(uuid "eb429ba6-7989-4e98-aa9b-ad654b3bb715")
+	)
+	(wire
+		(pts
+			(xy 127 72.39) (xy 128.27 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee8b8083-e501-4c9f-8bc6-a6e6720c5595")
+	)
+	(label "OLED DC"
+		(at 176.53 90.17 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0637fe17-daaa-47ce-ab76-845af39cf123")
 	)
 	(label "Rotary Encoder B"
 		(at 95.25 85.09 180)
@@ -2116,6 +2598,26 @@
 			(justify right bottom)
 		)
 		(uuid "0f3bd8cd-371b-4c57-8aa9-34c6236542e2")
+	)
+	(label "OLED Reset"
+		(at 176.53 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "282d5451-5a3f-4b24-89d6-1dd9ed4d499f")
+	)
+	(label "OLED CS"
+		(at 128.27 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "394c7c28-8057-4715-a3d0-889867a5d6fb")
 	)
 	(label "Key Switch 5"
 		(at 95.25 77.47 180)
@@ -2148,7 +2650,7 @@
 		(uuid "4de9feae-c6be-4baa-ba3f-618671123709")
 	)
 	(label "Rotary Encoder Push Button Switch"
-		(at 137.16 67.31 0)
+		(at 127 85.09 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2177,6 +2679,16 @@
 		)
 		(uuid "606d9ff0-7eb8-47bb-a99e-64f56691d251")
 	)
+	(label "OLED DC"
+		(at 128.27 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6691ab6f-70ce-4e44-9d84-d61c67980760")
+	)
 	(label "Key Switch 1"
 		(at 53.34 50.8 0)
 		(effects
@@ -2196,6 +2708,26 @@
 			(justify left bottom)
 		)
 		(uuid "7ca6d860-211f-4099-b66e-2d5d0a7b4a6a")
+	)
+	(label "OLED Clock"
+		(at 176.53 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8428d429-288b-4d22-8252-8426c912f101")
+	)
+	(label "OLED Data"
+		(at 128.27 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "86ba20d7-b709-4116-82bc-450e216a0e98")
 	)
 	(label "Key Switch 3"
 		(at 95.25 72.39 180)
@@ -2227,6 +2759,16 @@
 		)
 		(uuid "9283c12d-307d-4d9d-a025-a29b5bf8c61f")
 	)
+	(label "OLED Data"
+		(at 176.53 77.47 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a134a558-5b07-415d-a8cc-022cc9350462")
+	)
 	(label "Rotary Encoder Push Button Switch"
 		(at 148.59 113.03 0)
 		(effects
@@ -2236,6 +2778,26 @@
 			(justify left bottom)
 		)
 		(uuid "a3945c0e-e746-4b91-be57-9a67955a304c")
+	)
+	(label "OLED CS"
+		(at 176.53 96.52 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a41a39ea-262d-4274-8f48-20ab2698c7a5")
+	)
+	(label "OLED Clock"
+		(at 142.24 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "afbff0d5-9649-4e29-aa5e-b852a15c4d5e")
 	)
 	(label "Key Switch 3"
 		(at 53.34 76.2 0)
@@ -2256,6 +2818,16 @@
 			(justify right bottom)
 		)
 		(uuid "e4217f2b-164c-458d-a6a6-7f338004a5a3")
+	)
+	(label "OLED Reset"
+		(at 128.27 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eea6b9ad-2678-4a48-beb2-415454105d66")
 	)
 	(label "Key Switch 4"
 		(at 95.25 74.93 180)
@@ -2349,7 +2921,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 127 64.77 270)
+		(at 133.35 64.77 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2357,10 +2929,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "13d14e59-6dc8-4a92-b05e-f8ad17442d42")
 		(property "Reference" "#PWR05"
-			(at 123.19 64.77 0)
+			(at 129.54 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2371,7 +2942,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 130.81 64.7699 90)
+			(at 136.144 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2382,7 +2953,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 127 64.77 0)
+			(at 133.35 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2393,7 +2964,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 127 64.77 0)
+			(at 133.35 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2404,7 +2975,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 127 64.77 0)
+			(at 133.35 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2421,6 +2992,84 @@
 			(project "morph00"
 				(path "/730a7132-ee52-423d-a799-90687360e6fe"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 90.17 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "242c6fb0-09bf-4238-a9bc-f1d1357f571a")
+		(property "Reference" "#FLG02"
+			(at 90.17 60.325 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 90.17 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 90.17 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e7d94335-e590-4ffc-a57e-23db06299822")
+		)
+		(instances
+			(project "morph00"
+				(path "/730a7132-ee52-423d-a799-90687360e6fe"
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -2507,7 +3156,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 96.52 64.77 270)
+		(at 88.9 62.23 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2515,10 +3164,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "35a42eb0-5622-4f9a-ad27-4a34adc55767")
 		(property "Reference" "#PWR02"
-			(at 90.17 64.77 0)
+			(at 82.55 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2529,7 +3177,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 92.71 64.7699 90)
+			(at 85.598 62.23 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2540,7 +3188,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 64.77 0)
+			(at 88.9 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2551,7 +3199,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 64.77 0)
+			(at 88.9 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2562,7 +3210,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 96.52 64.77 0)
+			(at 88.9 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2579,6 +3227,102 @@
 			(project "morph00"
 				(path "/730a7132-ee52-423d-a799-90687360e6fe"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OLED:TZT_5.5_OLED_SSD1322")
+		(at 187.96 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "37212598-9295-4023-b4a6-59d5aec69cca")
+		(property "Reference" "DS1"
+			(at 187.96 83.82 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 187.96 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OLED:TZT_5.5_OLED_SSD1322"
+			(at 187.96 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 187.96 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "6"
+			(uuid "853b930b-1b2f-4d84-92ef-26ffb720d2a4")
+		)
+		(pin "3"
+			(uuid "73beab87-7e00-46d7-8d02-e0af02a90950")
+		)
+		(pin "4"
+			(uuid "47dafc6f-014e-4489-9ea1-a414c618b9ab")
+		)
+		(pin "7"
+			(uuid "8d0130f4-1ff0-43e6-9f74-e3f8b8b0c001")
+		)
+		(pin "2"
+			(uuid "38a96024-056c-444f-a760-ed3bd4fd52b3")
+		)
+		(pin "1"
+			(uuid "2311af2e-95a6-4d1d-a6fb-7cf390ca66b1")
+		)
+		(pin "5"
+			(uuid "b6e72165-63d1-4498-8e6c-9474ad933519")
+		)
+		(instances
+			(project "morph00"
+				(path "/730a7132-ee52-423d-a799-90687360e6fe"
+					(reference "DS1")
 					(unit 1)
 				)
 			)
@@ -2696,7 +3440,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 48.26 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -2902,6 +3646,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 133.35 64.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "59c2798d-58c1-4930-b9e4-28454043b264")
+		(property "Reference" "#FLG01"
+			(at 133.35 62.865 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 133.35 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 133.35 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 133.35 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 133.35 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "45f915df-b06d-4b15-9d18-3e420e0b4c55")
+		)
+		(instances
+			(project "morph00"
+				(path "/730a7132-ee52-423d-a799-90687360e6fe"
+					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 123.19 101.6 0)
 		(unit 1)
@@ -2981,6 +3803,176 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 187.96 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6df71897-aef5-47fe-b954-24ae5ba81717")
+		(property "Reference" "#PWR09"
+			(at 187.96 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 187.96 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 187.96 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 187.96 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7ee6f1c1-868c-4079-847a-f91cc4cc3719")
+		)
+		(instances
+			(project "morph00"
+				(path "/730a7132-ee52-423d-a799-90687360e6fe"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:RotaryEncoder_Switch_MP")
+		(at 140.97 115.57 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7b6dce85-7608-4fe1-8b2b-4ab85111056e")
+		(property "Reference" "SW8"
+			(at 140.97 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Rotary Encoder Switch"
+			(at 140.97 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm"
+			(at 137.16 111.506 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Rotary encoder, dual channel, incremental quadrate outputs, with switch and MP Pin"
+			(at 140.97 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "C"
+			(uuid "b4dc1e25-427b-4a73-825f-cd346c8706d0")
+		)
+		(pin "A"
+			(uuid "10da1921-5b10-40f7-b51b-36e9e6010002")
+		)
+		(pin "B"
+			(uuid "2513ef71-a6de-47e9-a3b2-0c6ecba2cced")
+		)
+		(pin "MP"
+			(uuid "3098165b-6483-4e1f-9200-be780c20c8db")
+		)
+		(pin "S1"
+			(uuid "21be0da4-5a77-4589-86d7-9512902a9989")
+		)
+		(pin "S2"
+			(uuid "eabb6e6e-9135-4786-be14-35ca245dc313")
+		)
+		(instances
+			(project "morph00"
+				(path "/730a7132-ee52-423d-a799-90687360e6fe"
+					(reference "SW8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 48.26 76.2 0)
 		(unit 1)
@@ -3012,7 +4004,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 48.26 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -3331,7 +4323,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 48.26 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -3532,6 +4524,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 140.97 123.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a8e1888b-cbd9-4bb1-b877-dee904496478")
+		(property "Reference" "#PWR011"
+			(at 140.97 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 140.97 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 140.97 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 140.97 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "904dba87-ed3f-46b7-b47c-568729eb7c48")
+		)
+		(instances
+			(project "morph00"
+				(path "/730a7132-ee52-423d-a799-90687360e6fe"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "ScottoKeebs:Placeholder_Resistor")
 		(at 109.22 110.49 180)
 		(unit 1)
@@ -3612,95 +4682,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:RotaryEncoder_Switch")
-		(at 140.97 115.57 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b6bc4e7c-6cd5-4e0e-8c47-30ebbc7b0681")
-		(property "Reference" "SW7"
-			(at 140.97 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "RotaryEncoder_Switch"
-			(at 140.97 107.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 137.16 111.506 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 140.97 108.966 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Rotary encoder, dual channel, incremental quadrate outputs, with switch"
-			(at 140.97 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "A"
-			(uuid "c24e2e17-a704-467d-ab77-c9f4cb006fcd")
-		)
-		(pin "S1"
-			(uuid "234bbce6-6fdb-49d5-99fd-2eb207fd87e4")
-		)
-		(pin "B"
-			(uuid "06d42e00-1bb1-4014-8796-26262a9f1f8b")
-		)
-		(pin "C"
-			(uuid "8671cc62-f43f-43b1-ab12-0f90e423d92c")
-		)
-		(pin "S2"
-			(uuid "a6bdb401-d4bd-46e1-ba43-379cb0aedf31")
-		)
-		(instances
-			(project "morph00"
-				(path "/730a7132-ee52-423d-a799-90687360e6fe"
-					(reference "SW7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 48.26 63.5 0)
 		(unit 1)
@@ -3732,7 +4713,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 48.26 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -3775,6 +4756,84 @@
 			(project "morph00"
 				(path "/730a7132-ee52-423d-a799-90687360e6fe"
 					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 187.96 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ead36983-7455-4787-a5a6-746b2db49338")
+		(property "Reference" "#PWR010"
+			(at 187.96 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 187.96 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 187.96 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 187.96 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "688b7178-a3e0-4dd6-a3d3-7d05f1ec1cd8")
+		)
+		(instances
+			(project "morph00"
+				(path "/730a7132-ee52-423d-a799-90687360e6fe"
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -3971,7 +5030,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 48.26 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -4051,7 +5110,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 48.26 109.22 0)
 			(hide yes)
 			(show_name no)

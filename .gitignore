@@ -1,0 +1,4 @@
+node_modules/
+dist/
+out/
+code/computer/electron_app/node_modules/
