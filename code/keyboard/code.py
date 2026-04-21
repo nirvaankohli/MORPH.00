@@ -9,6 +9,7 @@ import keypad
 import board
 import busio
 import digital_io
+import rotaryio
 import usb_cdc
 
 import json
@@ -49,6 +50,7 @@ display_bus = fourwire.FourWire(
 display = SSD1322(display_bus, width=256, height=64)
 
 kbd = Keyboard(usb_hid.devices)  # set keyboard object
+cc = ConsumerControl(usb_hid.devices)
 serial = usb_cdc.data  # setting up the desktop and macropad communication
 layout = KeyboardLayoutUS(kbd)
 
@@ -58,8 +60,20 @@ key_mapping = {
     2: [8, board.D4, None],
     3: [9, board.D5, None],
     4: [10, board.D6, None],
-    5: [11, board.D7, None],
+    5: [11, board.D8, None],
 }  # mapping of key - key_num : [key_pin_num, board.pin, function]
+
+encoder_pins = {
+    "a": board.D7,
+    "b": board.D9,
+    "button": board.D10,
+}
+
+encoder_mapping = {
+    "clockwise": None,
+    "counterclockwise": None,
+    "button": None,
+}
 
 
 # init keys - use dictionary
@@ -67,6 +81,9 @@ key_mapping = {
 keys = keypad.Keys(
     tuple(key_mapping[i][1] for i in key_mapping), value_when_pressed=False, pull=True
 )
+
+encoder = rotaryio.IncrementalEncoder(encoder_pins["a"], encoder_pins["b"])
+encoder_button = keypad.Keys((encoder_pins["button"],), value_when_pressed=False, pull=True)
 
 
 class keyboard_action:
@@ -76,9 +93,10 @@ class keyboard_action:
         self.json_load = json_load
 
         self.executable_type = json_load["executable_type"]
-        self.executable_type_options = ["string", "key", "key_combo"]
+        self.executable_type_options = ["string", "key", "key_combo", "consumer_control"]
 
-        self.key_num = json_load["key_num"]
+        self.key_num = json_load.get("key_num")
+        self.encoder_action = json_load.get("encoder_action")
 
         try:
             self.press = (
@@ -98,7 +116,12 @@ class keyboard_action:
 
         self.executable = self.get_executable_value()
 
-        if self.press:
+        if self.executable_type == "consumer_control":
+
+            self.executable_function = cc.send
+            self.press_hold = []
+
+        elif self.press:
 
             self.executable_function = kbd.press
 
@@ -142,6 +165,26 @@ class keyboard_action:
         if self.executable_type == "string":
 
             return executable
+
+        if self.executable_type == "consumer_control":
+
+            consumer_control_type = self.json_load["consumer_control_type"]
+
+            if consumer_control_type == "int":
+
+                return executable
+
+            if consumer_control_type == "ConsumerControlCode":
+
+                return (
+                    getattr(ConsumerControlCode, executable)
+                    if isinstance(executable, str)
+                    else executable
+                )
+
+            raise ValueError(
+                "Invalid consumer control type. Must be 'int' or 'ConsumerControlCode'."
+            )
 
         key_stroke_type = self.json_load["key_stroke_type"]
 
@@ -242,6 +285,10 @@ class keyboard_action:
 
                     self.executable_function(*self.executable)
 
+        elif self.executable_type == "consumer_control":
+
+            self.executable_function(self.executable)
+
         return True
 
 
@@ -309,6 +356,11 @@ def decrypt_serial_key_change(readable):
     return keyboard_action(readable)
 
 
+def decrypt_serial_encoder_change(readable):
+
+    return keyboard_action(readable)
+
+
 def get_key_mapping_index(key_num):
 
     if key_num in key_mapping:
@@ -334,6 +386,7 @@ def check_if_hold_key(current, old):
 # loop
 
 old_key_event = None
+last_encoder_position = encoder.position
 serial_buffer = b""
 
 while True:
@@ -359,6 +412,34 @@ while True:
             success = key_func.execute()
 
         old_key_event = key_event
+
+    encoder_position = encoder.position
+
+    if encoder_position != last_encoder_position:
+
+        if encoder_position > last_encoder_position:
+
+            encoder_func = encoder_mapping["clockwise"]
+
+        else:
+
+            encoder_func = encoder_mapping["counterclockwise"]
+
+        if encoder_func:
+
+            success = encoder_func.execute()
+
+        last_encoder_position = encoder_position
+
+    encoder_button_event = encoder_button.events.get()
+
+    if encoder_button_event and encoder_button_event.pressed:
+
+        encoder_func = encoder_mapping["button"]
+
+        if encoder_func:
+
+            success = encoder_func.execute()
 
     if serial is not None and serial.in_waiting > 0:
 
@@ -386,6 +467,14 @@ while True:
                     if mapping_index is not None:
 
                         key_mapping[mapping_index][2] = obj
+
+                elif readable.get("type") == "encoder_func_change":
+
+                    obj = decrypt_serial_encoder_change(readable)
+
+                    if obj.encoder_action in encoder_mapping:
+
+                        encoder_mapping[obj.encoder_action] = obj
 
                 elif readable.get("type") == "display_change":
 

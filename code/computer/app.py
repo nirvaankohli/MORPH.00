@@ -4,37 +4,74 @@ import json
 from flask import Flask, jsonify, request
 import serial
 
-COM_NUM = 6
+OS = "windows"  # Change to "linux" or "mac" as needed
+COM_NUM = 6  # leave this as None if not on windows
+LINUX_AND_MAC_PORT = "/dev/ttyUSB0"  # Change as needed for Linux/Mac
 BAUD_RATE = 9600
 DISPLAY_WIDTH = 256
 DISPLAY_HEIGHT = 64
 DISPLAY_PIXELS = DISPLAY_WIDTH * DISPLAY_HEIGHT
 
+serial_string = LINUX_AND_MAC_PORT if OS in ["linux", "mac"] else f"COM{COM_NUM}"
+
 app = Flask(__name__)
-ser = serial.Serial(f"COM{COM_NUM}", BAUD_RATE, timeout=1, write_timeout=1)
+ser = serial.Serial(serial_string, BAUD_RATE, timeout=1, write_timeout=1)
 
 
 def double_check_payload(data, type_):
 
-    if type_ == "key_func_change":
+    if type_ in ["key_func_change", "encoder_func_change"]:
 
-        key_func_change_required_fields = ["key_num", "executable_type", "executable"]
+        key_func_change_required_fields = ["executable_type", "executable"]
+
+        if type_ == "key_func_change":
+
+            key_func_change_required_fields.append("key_num")
+
+        else:
+
+            key_func_change_required_fields.append("encoder_action")
 
         for field in key_func_change_required_fields:
 
             if field not in data:
 
                 raise ValueError(
-                    f"Missing required field '{field}' for key function change."
+                    f"Missing required field '{field}' for function change."
                 )
 
-        if data["executable_type"] not in ["string", "key", "key_combo"]:
+        if data["executable_type"] not in [
+            "string",
+            "key",
+            "key_combo",
+            "consumer_control",
+        ]:
 
             raise ValueError("Invalid executable_type.")
 
-        if data["executable_type"] in ["key", "key_combo"] and "key_stroke_type" not in data:
+        if (
+            data["executable_type"] in ["key", "key_combo"]
+            and "key_stroke_type" not in data
+        ):
 
             raise ValueError("Missing required field 'key_stroke_type' for key action.")
+
+        if (
+            data["executable_type"] == "consumer_control"
+            and "consumer_control_type" not in data
+        ):
+
+            raise ValueError(
+                "Missing required field 'consumer_control_type' for consumer control action."
+            )
+
+        if type_ == "encoder_func_change" and data["encoder_action"] not in [
+            "clockwise",
+            "counterclockwise",
+            "button",
+        ]:
+
+            raise ValueError("Invalid encoder_action.")
 
     elif type_ == "display_change":
 
@@ -103,6 +140,7 @@ def handle_value_error(error):
 
 @app.route("/")
 def index():
+
     return jsonify({"message": "MORPH serial bridge is running."})
 
 
@@ -140,6 +178,31 @@ def send_message_type(key_num, executable_type):
 
     if data["type"] != "key_func_change":
         raise ValueError("Keyboard messages must use type 'key_func_change'.")
+
+    send_serial_payload(data)
+    return jsonify({"status": "sent", "payload": data})
+
+
+@app.route("/encoder/send", methods=["POST"])
+def send_encoder_data():
+    data = require_json_body()
+    data.setdefault("type", "encoder_func_change")
+
+    if data["type"] != "encoder_func_change":
+        raise ValueError("Encoder messages must use type 'encoder_func_change'.")
+
+    send_serial_payload(data)
+    return jsonify({"status": "sent", "payload": data})
+
+
+@app.route("/encoder/send/<encoder_action>", methods=["POST"])
+def send_encoder_message(encoder_action):
+    data = require_json_body()
+    data["encoder_action"] = encoder_action
+    data.setdefault("type", "encoder_func_change")
+
+    if data["type"] != "encoder_func_change":
+        raise ValueError("Encoder messages must use type 'encoder_func_change'.")
 
     send_serial_payload(data)
     return jsonify({"status": "sent", "payload": data})
