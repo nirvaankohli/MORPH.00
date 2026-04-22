@@ -17,7 +17,7 @@ When I initially found about fallout, I knew it was an one in a lifetime opportu
 
 Looking back, this project was filled with a lot of firsts. I also had so much fun. Like who knew how relaxing some parts could be and how enraging others could be. Anyways, I learned my first real CAD software, onshape. I will definitely be using it in VEX Robotics as most of our team's CAD team seniored out. It took me some time to get comfortable but it is pretty cool. It was also my first time with KiCad. Making the schematic was interesting, pcb routing was so relaxing, but the errors sadly was not.
 
----
+--- 
 
 ## A Little Summary
 
