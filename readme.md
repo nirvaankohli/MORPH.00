@@ -9,9 +9,9 @@ MORPH.00 is a keyboard with 6 key switches and a rotary encoder that can change(
 
 ---
 
-## Initial Thoughts & Reflection
+## Why choose this project?
 
-When I initially found about fallout, I knew it was an one in a lifetime opportunity. I also knew that I did not know anything about hardware. So I looked online and on youtube and decided that a macropad was perfect for me. After a few days of brainstorming, I decided to settle for the best balance between challenging and easy(this project). Also it was pretty cool, cus like who would not want a keyboard that can change functions based on the app you are on to make work less repetitive. 
+When I initially found about fallout, I knew it was an one in a lifetime opportunity. I also knew that I did not know anything about hardware. So I looked online and on youtube and decided that a macropad was perfect for me. After a few days of brainstorming, I decided to settle for the best balance between challenging and easy(this project). Also it was pretty cool, cus like who would not want a keyboard that can change functions based on the app you are on to make work less repetitive. The use for this is legitimate because I can think of so many times in a day I press the same 6 button when in app. This would be really useful for myself, and that's why I chose to build it. Also a keyboard with a screen is rlly cool.
 
 ---
 
@@ -54,7 +54,7 @@ I added a lot of stuff bc the Internet said so :). So hopefully that was not a m
 
 ----
 
-### How to Use?
+### How to Use It?
 
 This is relatively easy to use assuming it is all put together and well. All you need to do is drag firmware/software files into the KB2040 and let the host computer code run as a background process.
 
@@ -80,7 +80,7 @@ Since I have not had the pleasure of constructing this, I can't tell you for sur
    2. Put the top plate on the board.
    3. It should click into place thanks to the Cherry MX switches.
    4. Slide your usb c cable through the hole on the side of the case. For future use plug that cable into your host computer.
-   5. Then take your 3mm Spacer and insert it between the bottom of the PCB and plate(use washers for any weird space)
+   5. Then take your 3mm Spacer and insert it between the bottom of the PCB and plate
    6. Insert the screw on the bottom of the bottom plate 
    7. On the top of the pcb plate place a M3 nylock and fasten.
    8. Repeat for all other 3 corners.
@@ -101,3 +101,7 @@ Congrats! You have know constructed MORPH.00. Hopefully it should work.
 Check `bom.csv`!
 
 ---
+
+# Onshape Link
+
+[Onshape](https://cad.onshape.com/documents/fb2e845d06a2abfe6a4c7c6e/w/d1b8caaf10144fcbff733afe/e/741c88277487ad0443e0a772?renderMode=0&uiState=69e956052d35c8d037460b8d)
