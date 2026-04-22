@@ -2,7 +2,7 @@
 
 ---
 
-![alt text](images/MORPH00.png)
+![alt text](MORPH00.png)
 ![alt text](images/Side-View.png)
 
 MORPH.00 is a keyboard with 6 key switches and a rotary encoder that can change(morph their function). It also has an OLED to display each key or encoder's function at any given time. It is powered by the RP2040!
@@ -46,7 +46,7 @@ This schematic went through multiple, multiple changes. Like when I had to add p
 
 ### Final PCB
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ![alt text](images/pcb-w-components.png)
 
@@ -80,7 +80,7 @@ Since I have not had the pleasure of constructing this, I can't tell you for sur
    2. Put the top plate on the board.
    3. It should click into place thanks to the Cherry MX switches.
    4. Slide your usb c cable through the hole on the side of the case. For future use plug that cable into your host computer.
-   5. Then take your 3mm Spacer and insert it between the bottom of the PCB and plate
+   5. Then take your 3mm Spacer and insert it between the bottom of the PCB and plate(use washers for any weird space)
    6. Insert the screw on the bottom of the bottom plate 
    7. On the top of the pcb plate place a M3 nylock and fasten.
    8. Repeat for all other 3 corners.
@@ -93,5 +93,11 @@ Since I have not had the pleasure of constructing this, I can't tell you for sur
 ---
 
 Congrats! You have know constructed MORPH.00. Hopefully it should work.
+
+---
+
+# BOM
+
+Check `bom.csv`!
 
 ---
