@@ -3,7 +3,7 @@
 ---
 
 ![alt text](zine.png)
-![alt text](images/Side-View.png)
+![alt text](docs/images/Side-View.png)
 
 MORPH.00 is a keyboard with 6 key switches and a rotary encoder that can change(morph their function). It also has an OLED to display each key or encoder's function at any given time. It is powered by the RP2040!
 

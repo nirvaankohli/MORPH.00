@@ -62,10 +62,6 @@
       ],
       "drc_exclusions": [
         [
-          "copper_edge_clearance|38996014|35686691|23ca15da-620d-483b-b8c7-d82e61c39b84|ebfc8fbe-25b5-473f-991a-69b10a323b38",
-          "It's fine since it is exactly that amount no matter the edge clearance set - should be fine in manufacturing."
-        ],
-        [
           "lib_footprint_mismatch|150000000|50000000|dc27e7ac-9bc7-4ade-aa11-8295b33c5430|00000000-0000-0000-0000-000000000000",
           "Its all good"
         ]
@@ -155,7 +151,7 @@
         "min_track_width": 0.2,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
