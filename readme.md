@@ -29,8 +29,8 @@ The six switches are Cherry MXs, the rotary encoder an EC11 Rotary Encoder, and 
 
 # CAD Renderings
 
-![alt text](images/front-view-render-transparent.png)
-![alt text](images/Side-View.png)
+![alt text](docs/images/front-view-render-transparent.png)
+![alt text](docs/images/Side-View.png)
 
 CAD was a very infuriating experience if I may add.
 
@@ -40,15 +40,15 @@ CAD was a very infuriating experience if I may add.
 
 This is my final schematic
 
-![](images/schematic.png)
+![](docs/images/schematic.png)
 
 This schematic went through multiple, multiple changes. Like when I had to add power symbols, make a denouncer circuit, custom design the OLED symbol like 2 times, and change the GPIO pins for my OLED. I liked this portion a lot actually.
 
 ### Final PCB
 
-![alt text](images/image.png)
-
-![alt text](images/pcb-w-components.png)
+![alt text](docs/images/image.png)
+![alt text](docs/images/image-1.png)
+![alt text](docs/images/pcb-w-components.png)
 
 I added a lot of stuff bc the Internet said so :). So hopefully that was not a mistake. I was also just informed no 90 or acute angles so maybe not so final pcb :(.
 
